@@ -15,14 +15,18 @@ const supabaseUrl = 'https://uvtodzovoreqcqgxxdgr.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2dG9kem92b3JlcWNxZ3h4ZGdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2MzM0MzYsImV4cCI6MjA4NDIwOTQzNn0.xLkfoO6iMGS-00wgoVaxlkbG1fmmytZ_OXd7Ja3ifqM';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// WhatsApp Bot তৈরি করা
+// WhatsApp Bot তৈরি করা (মেমোরি সেভিং মোড)
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox'] // সার্ভারে চালানোর জন্য জরুরি
+        args: [
+            '--no-sandbox', 
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage', // এটি র‍্যাম ক্র্যাশ করা থেকে বাঁচাবে
+            '--disable-gpu'
+        ]
     }
 });
-
 // QR কোড জেনারেট করা
 client.on('qr', (qr) => {
     console.log('----------------------------------------------------');
