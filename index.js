@@ -8,6 +8,20 @@ const express = require('express');
 // সার্ভার যেন ক্র্যাশ না করে তাই একটি ডামি পোর্ট চালু করা
 const app = express();
 app.get('/', (req, res) => res.send('LexSword WhatsApp Bot is Alive!'));
+// ম্যানুয়াল টেস্ট করার জন্য ম্যাজিক লিংক
+app.get('/test', async (req, res) => {
+    try {
+        // নিচে XXXXXXXX এর জায়গায় আপনার নিজের হোয়াটসঅ্যাপ নম্বরটি দিন
+        const myNumber = "8801719790279@c.us"; 
+        
+        const testMsg = "✅ *LexSword Bot Test:* অভিনন্দন! আপনার অটোমেটিক মেসেজ সিস্টেম ১০০% পারফেক্টভাবে কাজ করছে।";
+        await client.sendMessage(myNumber, testMsg);
+        
+        res.send("Success! Check your WhatsApp.");
+    } catch (err) {
+        res.send("Error: " + err.message);
+    }
+});
 app.listen(process.env.PORT || 3000, () => console.log('Web server is running.'));
 
 // আপনার Supabase এর URL এবং KEY এখানে বসান (অবশ্যই সঠিকটা দেবেন)
