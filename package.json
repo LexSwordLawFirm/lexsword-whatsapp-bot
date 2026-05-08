@@ -1,0 +1,17 @@
+{
+  "name": "lexsword-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot for LexSword",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "node-cron": "^3.0.3",
+    "@supabase/supabase-js": "^2.39.3",
+    "moment": "^2.30.1",
+    "express": "^4.18.2"
+  }
+}
