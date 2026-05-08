@@ -11,8 +11,8 @@ app.get('/', (req, res) => res.send('LexSword WhatsApp Bot is Alive!'));
 app.listen(process.env.PORT || 3000, () => console.log('Web server is running.'));
 
 // আপনার Supabase এর URL এবং KEY এখানে বসান (অবশ্যই সঠিকটা দেবেন)
-const supabaseUrl = 'আপনার_সুপাবেস_ইউআরএল_এখানে_দিন';
-const supabaseKey = 'আপনার_সুপাবেস_অ্যানন_কি_এখানে_দিন';
+const supabaseUrl = 'https://uvtodzovoreqcqgxxdgr.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2dG9kem92b3JlcWNxZ3h4ZGdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2MzM0MzYsImV4cCI6MjA4NDIwOTQzNn0.xLkfoO6iMGS-00wgoVaxlkbG1fmmytZ_OXd7Ja3ifqM';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // WhatsApp Bot তৈরি করা
